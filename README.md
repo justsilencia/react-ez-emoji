@@ -41,13 +41,13 @@ var EzEmoji = require('react-ez-emoji'); // ES5 with npm
 
 ## Usage
 
-react-ez-emoji requires two props, setVal and emojiPath. setVal is a method in the parent 
+react-ez-emoji requires two props; setVal and emojiPath. setVal is a method in the parent 
 component that updates the state. emojiPath is the path which will point to the emoji .png
-images. An emoji folder with included .png emojis should be taken from the module folder
-and placed in your project wherever your resources are made public. The same should be done
-with the included .css style sheet. If you are using sass or less, simply copy the code or change
-the extension and place in the correct location. Styling can be easily customized for the 
-users needs.
+images. A folder called "emoji" with included .png emojis is included in the react-ez-emoji module. 
+This folder should be copied from the react-ez-emoji module folder and placed in your project wherever your 
+resources are made public. The same should be done with the included .css style sheet. If 
+you are using sass or less, simply copy the code or change the extension and place in the 
+correct location. Styling can be easily customized for the users needs.
 
 ```js
 import React, {Component} from 'react';
