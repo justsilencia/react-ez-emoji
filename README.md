@@ -1,6 +1,8 @@
 # react-ez-emoji
 
-A light-weight input component with built-in emoji functionality.
+A light-weight and dependency-free input component with built-in emoji functionality. 
+
+![ez-emoji-example](https://raw.githubusercontent.com/justsilencia/react-ez-emoji/master/ez-emoji-example.jpg)
 
 react-ez-emoji inserts a contenteditable div equipped with a button that opens and closes
 an emoji menu modal. Users can choose an emoji, and react-ez-emoji will automatically insert
