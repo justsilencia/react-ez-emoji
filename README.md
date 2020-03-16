@@ -9,6 +9,7 @@ as the image itself, but will be saved in state as an encoded value.
 
 ## Emoji encoding
 
+```js
 {
   ':smile:': 'smile.png',
   ':sad:': 'sad.png',
@@ -23,6 +24,7 @@ as the image itself, but will be saved in state as an encoded value.
   ':moneysmile:': 'moneysmile.png',
   ':neckbeard:': 'neckbeard.png'
 }
+```
 
 ## Installation
 
