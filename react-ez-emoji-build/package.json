@@ -1,0 +1,14 @@
+{
+    "name": "react-ez-emoji",
+    "version": "1.0.2",
+    "description": "A simple, light-weight react emoji component comprised of a contenteditable div with built-in emoji functionality.",
+    "main": "index.js",
+    "license": "MIT",
+    "keywords": [
+        "npm",
+        "package",
+        "react",
+        "contenteditable",
+        "emoji"
+    ]
+}
