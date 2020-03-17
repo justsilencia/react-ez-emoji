@@ -12,10 +12,7 @@ export default class EzEmoji extends Component {
 
         this.state = {
             emojis: emojiIcons,
-            savedSelection: {
-                start: 0,
-                end: 0
-            },
+            savedSelection: null,
             menuVisible: false
         }
 
@@ -32,21 +29,21 @@ export default class EzEmoji extends Component {
     }
 
     onChange() {
-        const savedSel = saveSelection(this.inputRef.current);
+        const savedSel = saveSelection();
+        
         const sanitizedText = this.getSanitizedVal();
-
         this.props.setVal(sanitizedText);
 
-        this.setState({
-            savedSelection: savedSel
-        });
+        this.setState({ savedSelection: savedSel });
         
         document.execCommand('enableObjectResizing', true, true);
     }
 
 
     componentDidUpdate() {
-        restoreSelection(this.inputRef.current, this.state.savedSelection);
+        if (this.state.savedSelection) {
+            restoreSelection(this.state.savedSelection);
+        }
     }
 
     disableResize() {
@@ -54,7 +51,7 @@ export default class EzEmoji extends Component {
     }
 
     MenuToggle() {
-        this.setState({menuVisible: !this.state.menuVisible});
+        this.setState({ menuVisible: !this.state.menuVisible });
     }
 
     shouldComponentUpdate(nextprop, nextstate) {
@@ -62,7 +59,6 @@ export default class EzEmoji extends Component {
     }
 
     render () {
-
         return (
             <div className='ez-emoji-container'>
                 <div className='emoji-wysiwyg-editor' id='ez-emoji-input'
@@ -71,11 +67,11 @@ export default class EzEmoji extends Component {
                     onKeyUp={this.onChange} 
                     onPaste={this.onChange}
                     onMouseDown={this.disableResize}
-                    onFocus={this.onFocus}
+                    onFocus={this.disableResize}
                     ref={this.inputRef}
                 />
                 <svg onClick={this.MenuToggle} className="ez-emoji-btn" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="smile" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm80 168c17.7 0 32 14.3 32 32s-14.3 32-32 32-32-14.3-32-32 14.3-32 32-32zm-160 0c17.7 0 32 14.3 32 32s-14.3 32-32 32-32-14.3-32-32 14.3-32 32-32zm194.8 170.2C334.3 380.4 292.5 400 248 400s-86.3-19.6-114.8-53.8c-13.6-16.3 11-36.7 24.6-20.5 22.4 26.9 55.2 42.2 90.2 42.2s67.8-15.4 90.2-42.2c13.4-16.2 38.1 4.2 24.6 20.5z"></path></svg>
-                { this.state.menuVisible && <EmojiMenu emojiPath={this.props.emojiPath} triggerChange={this.onChange} MenuToggle={this.MenuToggle} /> }
+                { this.state.menuVisible && <EmojiMenu inputRef={this.inputRef} emojiPath={this.props.emojiPath} triggerChange={this.onChange} MenuToggle={this.MenuToggle} savedSelection={this.state.savedSelection} /> }
             </div>
         )
 
