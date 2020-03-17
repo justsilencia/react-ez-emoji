@@ -45,7 +45,7 @@
 	box-sizing: border-box;
 }
 .emoji-menu > div {
-	max-height: 200px;
+	height: auto;
 	overflow: hidden;
 	width: auto;
 	background: #fff;
