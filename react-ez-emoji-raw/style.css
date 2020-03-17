@@ -19,18 +19,13 @@
 	width: 300px;
     background: #c0c8cd;
     resize: none;
-	border-radius: 20px;
-}
-
-.emoji-wysiwyg-editor > br, .emoji-wysiwyg-editor > div {
-    display: none;
+	border-radius: 10px;
 }
 
 .emoji-wysiwyg-editor img {
 	width: 24px;
 	height: 24px;
 	vertical-align: middle;
-	margin: -3px 0 0 0;
 }
 
 .emoji-menu {
