@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {emojiIcons} from './emoji-icons';
-import { htmlEntities, createIcon, createHtmlIcon, replaceSelection } from './utils';
+import { htmlEntities, createIcon, createHtmlIcon, replaceSelection, restoreSelection } from './utils';
 
 export default class EmojiMenu extends Component {
     constructor(props) {
@@ -13,8 +13,15 @@ export default class EmojiMenu extends Component {
         const emoji = e.currentTarget.getAttribute('title');
         const img = createHtmlIcon(emoji, this.props.emojiPath);
         this.props.MenuToggle();
+
+        this.props.inputRef.current.focus();
         
+        if (this.props.savedSelection) {
+            restoreSelection(this.props.savedSelection);
+        }
+
         replaceSelection(img);
+        
         this.props.triggerChange();
     }
 
