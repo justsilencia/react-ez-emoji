@@ -1,6 +1,8 @@
 # react-ez-emoji
 
-A light-weight and dependency-free input component with built-in emoji functionality. 
+A **lightweight** input component with built-in emoji functionality.
+
+Built with the capability to run in an **online or offline** environment.
 
 ![ez-emoji-example](https://raw.githubusercontent.com/justsilencia/react-ez-emoji/master/ez-emoji-example.jpg)
 
@@ -38,18 +40,14 @@ npm i react-ez-emoji
 
 ```js
 import EzEmoji from 'react-ez-emoji'; // ES6
-var EzEmoji = require('react-ez-emoji'); // ES5 with npm
+var EzEmoji = require('react-ez-emoji'); // ES5 
 ```
 
 ## Usage
 
 react-ez-emoji requires two props; setVal and emojiPath. setVal is a method in the parent 
 component that updates the state. emojiPath is the path which will point to the emoji .png
-images. A folder called "emoji" with included .png emojis is included in the react-ez-emoji module. 
-This folder should be copied from the react-ez-emoji module folder and placed in your project wherever your 
-resources are made public. The same should be done with the included .css style sheet. If 
-you are using sass or less, simply copy the code or change the extension and place in the 
-correct location. Styling can be easily customized for the users needs.
+images. A folder called "emoji" with included .png emojis is included in the react-ez-emoji module. This folder should be copied from the react-ez-emoji module folder and placed in your project wherever your resources are made public. The same should be done with the included .css style sheet. If you are using sass or less, simply copy the code or change the extension and place in the correct location. Styling can be easily customized for the users needs.
 
 ```js
 import React, {Component} from 'react';
