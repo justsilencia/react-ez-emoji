@@ -1,6 +1,6 @@
 # react-ez-emoji
 
-A **lightweight** input component with built-in emoji functionality.
+A **lightweight** and **minimalistic** input component with built-in emoji functionality.
 
 Built with the capability to run in an **online or offline** environment.
 
